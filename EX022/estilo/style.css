@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Android';
+    src: url('/estilo/Fontes/Douglast\ PERSONAL\ USE\ ONLY!.ttf') format('opentype')
+}
+
+
+:root{
+    --cor0: #e3c5eb7e;
+    --cor01: #9815bdbe; 
+    --cor02: #501261e1;
+    --cor03: #cf46f5d5;
+
+    --fonte-padrao: arial, verdana, helvetica, sans-serif;
+}
+body {
+    background-color: rgba(102, 177, 238, 0.541);
+    padding: 0.5px;
+    
+}
+p{
+    margin: 15px 0px;
+   
+}
+ header{
+    background-color: var(blue);
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+ }
+header > h1 {
+    color: white;
+    font-family: 'Android';
+    font-size: 3em;
+    margin-bottom: 3px;
+}
+ header > p{
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    color: white;
+    max-width: 600px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: auto;
+    text-shadow: 2px 2px 0px rgb(0, 0, 0, 0.315 );
+
+}
+
+nav{
+    background-color: white;
+    padding: 5px;
+    box-shadow: 0, 0, 0, 0, 394;
+}
+
+nav > a {
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: .5s;
+    }
+
+    nav > a:hover{
+        background-color: white;
+        color: black;
+    }
+main{
+    background-color: white; 
+}
+main h1{
+    color: var(--cor03);
+}
+main h2{
+    font-family: var('Android');
+}
+div.video{
+    background-color: aqua;
+    margin-bottom: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 50%;
+    position: relative;
+    
+}
+div.video > iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+aside{
+    background-color: aqua;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px black;
+}
+
+footer{
+    background-color: var(--cor03);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+footer{
+    background-color: rgb(5, 5, 5);
+    padding: 10px;
+    border-radius: 5px;
+    text-overflow: ellipsis;
+}
+footer > p a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+footer a:hover{
+    text-decoration: underline;
+    color: var(rgb(91, 233, 243));
+}

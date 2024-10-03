@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras - Loja de Crochês</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+                
+        header{
+            background-color: blue;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        header h1{
+            margin: 0;
+            font-size: 2.5em;
+            text-decoration: underline;
+
+        }
+        ::selection{
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 8px black;
+        }
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ff6347;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
+        .cart-item span {
+            font-size: 1.1rem;
+        }
+        .cart-summary {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 10px 0;
+            border-top: 1px solid #ccc;
+        }
+        .coupon-section {
+            margin-top: 20px;
+        }
+        .coupon-section input {
+            padding: 10px;
+            width: 70%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .coupon-section button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .coupon-section button:hover {
+            background-color: #218838;
+        }
+        .delivery-section {
+            margin-top: 20px;
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .delivery-section input {
+            padding: 10px;
+            width: 70%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .cta-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .cta-buttons a {
+            padding: 10px 20px;
+            background-color: #19b14c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .cta-buttons a:hover {
+            background-color: #1fc4da00;
+        }
+        .payment-methods {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .payment-methods img {
+            width: 100px;
+            margin: 10px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .payment-methods img:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            background-color: #343a40;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Carrinho de Compras</h1>
+    </header>
+
+    <div class="container">
+        <!-- Produtos -->
+        <div class="section">
+            <h2>Produtos e Serviços</h2>
+            <div class="cart-item">
+                <span>Tapete de Crochê</span>
+                <span>R$ 150,00</span>
+            </div>
+            <div class="cart-item">
+                <span>Com desconto no PIX: R$ 115,00</span>
+                <span>Parcelado em até 10x sem juros</span>
+            </div>
+            <button style="background-color: red; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer;">REMOVER TODOS OS PRODUTOS</button>
+        </div>
+
+        <!-- Cupon de Desconto -->
+        <div class="coupon-section">
+            <h2>Cupon de Desconto</h2>
+            <input type="text" placeholder="Digite seu cupom aqui">
+            <button>APLICAR CUPOM</button>
+        </div>
+
+        <!-- Resumo -->
+        <div class="section">
+            <h2>Resumo</h2>
+            <div class="cart-summary">
+                <span>Valor dos Produtos:</span>
+                <span>R$ 749,99</span>
+            </div>
+            <div class="cart-summary">
+                <span>Frete:</span>
+                <span>R$ 0,00</span>
+            </div>
+            <div class="cart-summary">
+                <span><strong>Total à vista no PIX:</strong></span>
+                <span><strong>R$ 659,99</strong> (Economize: R$ 90,00)</span>
+            </div>
+        </div>
+
+        <!-- Entrega -->
+        <div class="delivery-section">
+            <h2>Entrega</h2>
+            <input type="text" placeholder="Digite seu CEP">
+            <button>OK</button>
+        </div>
+
+        <!-- Métodos de Pagamento -->
+        <div class="section">
+            <h2>Métodos de Pagamento</h2>
+            <div class="payment-methods">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="Visa" title="Visa" onclick="selectPayment('Visa')">
+                <img src="Imagens/formas de pagamento/mastercard.webp" alt="MasterCard" title="MasterCard" onclick="selectPayment('MasterCard')">
+                <img src="Imagens/formas de pagamento/americanexpress.png" alt="American Express" title="American Express" onclick="selectPayment('American Express')">
+                <img src="Imagens/formas de pagamento/elo.png" alt="Elo" title="Elo" onclick="selectPayment('Elo')">
+                <img src="Imagens/formas de pagamento/pix.png" alt="PIX" title="PIX" onclick="selectPayment('PIX')">
+                <img src="Imagens/formas de pagamento/boleto.png" alt="Boleto" title="Boleto" onclick="selectPayment('Boleto')">
+            </div>
+        </div>
+
+        <!-- Botões de Ação -->
+        <div class="cta-buttons">
+            <a href="#">IR PARA O PAGAMENTO</a>
+            <a href="#">CONTINUAR COMPRANDO</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Loja de Crochês - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function selectPayment(method) {
+            alert('Você selecionou o método de pagamento: ' + method);
+        }
+    </script>
+
+</body>
+</html>
+
+
